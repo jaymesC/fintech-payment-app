@@ -28,9 +28,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _headSection() {
     return Container(
-      height: 310,
+      height: 300,
       child: Stack(children: [
         _mainBackground(),
+        _curveImageContainer(),
       ]),
     );
   }
@@ -39,7 +40,20 @@ class _MyHomePageState extends State<MyHomePage> {
     return Positioned(
       child: Container(
         decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage('images/background.png'))),
+            image: DecorationImage(
+                image: AssetImage('images/background.png'),
+                fit: BoxFit.fitHeight)),
+      ),
+    );
+  }
+
+  _curveImageContainer() {
+    return Positioned(
+      child: Container(
+        height: MediaQuery.of(context).size.height*0.1,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('images/curve.png'), fit: BoxFit.fitHeight)),
       ),
     );
   }
