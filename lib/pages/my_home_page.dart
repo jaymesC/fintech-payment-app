@@ -21,6 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Stack(
             children: [
               _headSection(),
+              _listBills(),
             ],
           ),
         ));
@@ -39,7 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _mainBackground() {
     return Positioned(
+      bottom: 10,
+      left: 0,
       child: Container(
+        height: 290,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('images/background.png'),
@@ -52,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Positioned(
       left: 0,
       right: -2,
-      bottom: 0,
+      bottom: 10,
       child: Container(
         height: MediaQuery.of(context).size.height * 0.18,
         decoration: BoxDecoration(
@@ -64,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _buttonContainer() {
     return Positioned(
-      bottom: 0,
+      bottom: 30,
       right: 50,
       child: Container(
           height: 60,
@@ -77,6 +82,72 @@ class _MyHomePageState extends State<MyHomePage> {
                     offset: Offset(0, 1),
                     color: Color(0xFF11324d).withOpacity(0.2)),
               ])),
+    );
+  }
+
+  _listBills() {
+    return Positioned(
+      top: 310,
+      child: Container(
+        height: 130,
+        width: MediaQuery.of(context).size.width - 20,
+        decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Color(0xFFd8dbe0),
+                offset: Offset(1, 1),
+                blurRadius: 20,
+                spreadRadius: 10,
+              )
+            ],
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(30),
+                bottomRight: Radius.circular(30))),
+        child: Container(
+          margin: const EdgeInsets.only(top: 10, left: 10),
+          child: Row(
+            children: [
+              Column(
+                children: [
+                  Row(children: [
+                    Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 3, color: Colors.grey),
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              image: AssetImage('images/brand1.png'),
+                              fit: BoxFit.fitHeight)),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('KenGen Power',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: AppColor.mainColor,
+                                  fontWeight: FontWeight.w700)),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('ID: 537298',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: AppColor.idColor,
+                                  fontWeight: FontWeight.w700)),
+                        ])
+                  ])
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
