@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment_app/component/colors.dart';
+import 'package:payment_app/widgets/text_size.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -109,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Row(
             children: [
               Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(children: [
                     Container(
@@ -140,8 +142,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                   fontSize: 16,
                                   color: AppColor.idColor,
                                   fontWeight: FontWeight.w700)),
-                        ])
-                  ])
+                        ]),
+                  ]),
+                  SizedText(
+                    text: 'Auto pay on 24th May 18',
+                    color: AppColor.green,
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
                 ],
               )
             ],
