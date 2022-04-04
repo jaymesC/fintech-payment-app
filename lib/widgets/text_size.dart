@@ -9,7 +9,7 @@ class SizedText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size textSize = _textSize(text);
+    // final Size textSize = _textSize(text);
     return Container(
         child: Column(
       children: [
@@ -25,11 +25,11 @@ class SizedText extends StatelessWidget {
     ));
   }
 
- Size  _textSize() {
-   TextPainter(
-     text: 
-   )
+//  Size  _textSize() {
+//    TextPainter(
+//      text: 
+//    )
 
-   return ();
-  }
+//    return ();
+//   }
 }

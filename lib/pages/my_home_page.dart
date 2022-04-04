@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
   _buttonContainer() {
     return Positioned(
       bottom: 30,
-      right: 50,
+      right: 10,
       child: Container(
           height: 60,
           width: 60,
