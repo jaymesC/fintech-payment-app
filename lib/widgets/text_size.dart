@@ -9,7 +9,7 @@ class SizedText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final Size textSize = _textSize(text);
+    final Size textSize = _textSize(text);
     return Container(
         child: Column(
       children: [
@@ -25,11 +25,15 @@ class SizedText extends StatelessWidget {
     ));
   }
 
-//  Size  _textSize() {
-//    TextPainter(
-//      text: 
-//    )
+ Size  _textSize(String text) {
+   // ignore: avoid_single_cascade_in_expression_statements
+   final TextPainter textPainter = TextPainter(
+     text: TextSpan(text: text, style:  TextStyle(
+              fontSize: 16, color: color, fontWeight: FontWeight.w700) ),
+              maxLines: 1,
+              textDirection: TextDirection.ltr
+   )..layout(minWidth: 0, maxWidth: double.infinity);
 
-//    return ();
-//   }
+   return textPainter.size;
+  }
 }
