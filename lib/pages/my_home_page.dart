@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
               itemCount: 4,
               itemBuilder: (_, index) {
                 return Container(
-                  margin: const EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.only(top: 20, right: 20),
                   height: 130,
                   width: MediaQuery.of(context).size.width - 20,
                   decoration: BoxDecoration(
