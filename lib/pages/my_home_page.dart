@@ -154,48 +154,63 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-              Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(right: 20),
-                      child: Container(
-                        padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: AppColor.selectBackground),
-                        child: Text('Select',
-                            style: TextStyle(
-                              color: AppColor.selectColor,
-                            )),
-                      ),
-                    ),
-                    Container(
-                        margin: const EdgeInsets.only(right: 20),
-                        child: Column(
-                          children: const [
-                            Text('\$1248.00',
+              Row(
+                children: [
+                  Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          // margin: const EdgeInsets.only(right: 20),
+                          child: Container(
+                            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: AppColor.selectBackground),
+                            child: Text('Select',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: AppColor.selectColor,
+                                )),
+                          ),
+                        ),
+                        Expanded(child: Container()),
+                        Container(
+                            // margin: const EdgeInsets.only(right: 20),
+                            child: Column(
+                          children: [
+                            const Text('\$1248.00',
                                 style: TextStyle(
                                     fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.red)),
-                            SizedBox(
+                                    fontWeight: FontWeight.w900,
+                                    color: AppColor.mainColor)),
+                            const SizedBox(
                               height: 5,
                             ),
-                            Text('Due in 3 days'),
-                            SizedBox(
-                              height: 20,
+                            Text('Due in 3 days',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w700,
+                                    color: AppColor.idColor)),
+                            const SizedBox(
+                              height: 15,
                             ),
                           ],
                         ))
-                  ]),
-              // Container(
-              //   height: 20,
-              //   // width: 10,
-              //   // color: Colors.red,
-              //   decoration: BoxDecoration(
-              //       border: Border.all(width: 10, color: Colors.red)),
-              // )
+                      ]),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    height: 35,
+                    width: 5,
+                    decoration: BoxDecoration(
+                        color: AppColor.halfOval,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            bottomLeft: Radius.circular(30))),
+                  )
+                ],
+              ),
             ],
           ),
         ),
