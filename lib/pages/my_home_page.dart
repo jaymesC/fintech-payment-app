@@ -108,6 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           margin: const EdgeInsets.only(top: 10, left: 10),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -152,7 +153,49 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 5,
                   ),
                 ],
-              )
+              ),
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(right: 20),
+                      child: Container(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: AppColor.selectBackground),
+                        child: Text('Select',
+                            style: TextStyle(
+                              color: AppColor.selectColor,
+                            )),
+                      ),
+                    ),
+                    Container(
+                        margin: const EdgeInsets.only(right: 20),
+                        child: Column(
+                          children: const [
+                            Text('\$1248.00',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.red)),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text('Due in 3 days'),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                        ))
+                  ]),
+              // Container(
+              //   height: 20,
+              //   // width: 10,
+              //   // color: Colors.red,
+              //   decoration: BoxDecoration(
+              //       border: Border.all(width: 10, color: Colors.red)),
+              // )
             ],
           ),
         ),
