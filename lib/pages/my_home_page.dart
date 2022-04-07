@@ -213,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ],
                                   ))
                                 ]),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Container(
@@ -221,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: 5,
                               decoration: BoxDecoration(
                                   color: AppColor.halfOval,
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(30),
                                       bottomLeft: Radius.circular(30))),
                             )
@@ -236,7 +236,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _payButton() {
-    return Positioned(
+    return const Positioned(
       bottom: 20,
       child: AppLargeButton(
         text: "Pay all bills",
