@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:payment_app/component/colors.dart';
 
@@ -24,12 +22,17 @@ class AppLargeButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        height: 60,
+        width: MediaQuery.of(context).size.width - 100,
         decoration: BoxDecoration(
+            color: backgroundColor,
             borderRadius: BorderRadius.circular(10),
             border: Border.all(width: 2, color: AppColor.mainColor)),
-        child: Text(text,
-            style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 50, color: textColor)),
+        child: Center(
+          child: Text(text,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 50, color: textColor)),
+        ),
       ),
     );
   }

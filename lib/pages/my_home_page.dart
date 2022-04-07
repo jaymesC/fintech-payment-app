@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment_app/component/colors.dart';
+import 'package:payment_app/widgets/large_buttons.dart';
 import 'package:payment_app/widgets/text_size.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -23,6 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               _headSection(),
               _listBills(),
+              _payButton(),
             ],
           ),
         ));
@@ -231,5 +233,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               }),
         ));
+  }
+
+  _payButton() {
+    return Positioned(
+      bottom: 20,
+      child: AppLargeButton(
+        text: "Pay all bills",
+        textColor: Colors.white,
+      ),
+    );
   }
 }
