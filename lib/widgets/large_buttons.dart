@@ -32,7 +32,7 @@ class AppLargeButton extends StatelessWidget {
         child: Center(
           child: Text(text,
               style: TextStyle(
-                  fontWeight: FontWeight.bold, fontSize: 40, color: textColor)),
+                  fontWeight: FontWeight.bold, fontSize: 30, color: textColor)),
         ),
       ),
     );

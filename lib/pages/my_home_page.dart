@@ -79,11 +79,33 @@ class _MyHomePageState extends State<MyHomePage> {
           showModalBottomSheet<dynamic>(
               isScrollControlled: true,
               barrierColor: Colors.transparent,
-              backgroundColor: Colors.grey.withOpacity(0.5),
+              backgroundColor: Colors.transparent,
               context: context,
               builder: (BuildContext bc) {
                 return Container(
-                  height: MediaQuery.of(context).size.height - 240,
+                  height: MediaQuery.of(context).size.height - 210,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        bottom: 0,
+                        child: Container(
+                          color: Color(0xFFeef1f4).withOpacity(0.7),
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height - 300,
+                        ),
+                      ),
+                      Positioned(
+                          right: 10,
+                          child: Container(
+                            width: 60,
+                            height: 250,
+                            decoration: BoxDecoration(
+                              color: AppColor.mainColor,
+                              borderRadius: BorderRadius.circular(29),
+                            ),
+                          ))
+                    ],
+                  ),
                 );
               });
         },
