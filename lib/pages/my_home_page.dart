@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:payment_app/component/colors.dart';
+import 'package:payment_app/pages/payment_page.dart';
 import 'package:payment_app/widgets/buttons.dart';
 import 'package:payment_app/widgets/large_buttons.dart';
 import 'package:payment_app/widgets/text_size.dart';
@@ -79,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: GestureDetector(
         onTap: () {
           showModalBottomSheet<dynamic>(
-            // transitionAnimationController: AnimationController(),
+              // transitionAnimationController: AnimationController(),
               isScrollControlled: true,
               barrierColor: Colors.transparent,
               backgroundColor: Colors.transparent,
@@ -306,9 +308,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _payButton() {
-    return const Positioned(
+    return Positioned(
       bottom: 20,
       child: AppLargeButton(
+        onTap: () {
+          Get.to(() => PaymentPage());
+        },
         text: "Pay all bills",
         textColor: Colors.white,
       ),

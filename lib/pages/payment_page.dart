@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:payment_app/component/colors.dart';
 import 'package:payment_app/widgets/large_buttons.dart';
 
@@ -172,7 +173,7 @@ class PaymentPage extends StatelessWidget {
                                 fontSize: 18, fontWeight: FontWeight.w500))
                       ]),
                       SizedBox(
-                        width: 50,
+                        width: h * 0.13,
                       ),
                       Column(
                         children: [
@@ -187,7 +188,7 @@ class PaymentPage extends StatelessWidget {
                                 color: Colors.white,
                               )),
                           SizedBox(
-                            height: 10,
+                            height: 5,
                           ),
                           Text('print',
                               style: TextStyle(
@@ -198,13 +199,17 @@ class PaymentPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: h * 0.045,
                 ),
                 AppLargeButton(
-                    text: 'Done',
-                    textColor: AppColor.mainColor,
-                    isBorder: true,
-                    backgroundColor: Colors.white),
+                  text: 'Done',
+                  textColor: AppColor.mainColor,
+                  isBorder: true,
+                  backgroundColor: Colors.white,
+                  onTap: () {
+                    Get.back();
+                  },
+                ),
               ],
             )
           ],
