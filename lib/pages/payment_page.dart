@@ -145,6 +145,57 @@ class PaymentPage extends StatelessWidget {
                       fontSize: 30,
                       fontWeight: FontWeight.w600),
                 ),
+                SizedBox(
+                  height: h * 0.07,
+                ),
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(children: [
+                        Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                                color: AppColor.mainColor,
+                                borderRadius: BorderRadius.circular(25)),
+                            child: Icon(
+                              Icons.share,
+                              color: Colors.white,
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text('share',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w700))
+                      ]),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  color: AppColor.mainColor,
+                                  borderRadius: BorderRadius.circular(25)),
+                              child: Icon(
+                                Icons.print,
+                                color: Colors.white,
+                              )),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text('print',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w700))
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ],
             )
           ],
