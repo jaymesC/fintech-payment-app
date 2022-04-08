@@ -27,7 +27,7 @@ class AppLargeButton extends StatelessWidget {
         width: MediaQuery.of(context).size.width - 60,
         decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(8),
             border: Border.all(width: 2, color: AppColor.mainColor)),
         child: Center(
           child: Text(text,
