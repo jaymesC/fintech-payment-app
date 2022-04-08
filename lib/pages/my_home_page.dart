@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment_app/component/colors.dart';
+import 'package:payment_app/widgets/buttons.dart';
 import 'package:payment_app/widgets/large_buttons.dart';
 import 'package:payment_app/widgets/text_size.dart';
 
@@ -37,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         _mainBackground(),
         _curveImageContainer(),
         _buttonContainer(),
+        _textContainer(),
       ]),
     );
   }
@@ -77,6 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: GestureDetector(
         onTap: () {
           showModalBottomSheet<dynamic>(
+            // transitionAnimationController: AnimationController(),
               isScrollControlled: true,
               barrierColor: Colors.transparent,
               backgroundColor: Colors.transparent,
@@ -89,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Positioned(
                         bottom: 0,
                         child: Container(
-                          color: Color(0xFFeef1f4).withOpacity(0.7),
+                          color: const Color(0xFFeef1f4).withOpacity(0.7),
                           width: MediaQuery.of(context).size.width,
                           height: MediaQuery.of(context).size.height - 300,
                         ),
@@ -97,13 +100,44 @@ class _MyHomePageState extends State<MyHomePage> {
                       Positioned(
                           right: 10,
                           child: Container(
+                            padding: const EdgeInsets.only(
+                              top: 10,
+                              bottom: 20,
+                            ),
                             width: 60,
                             height: 250,
                             decoration: BoxDecoration(
                               color: AppColor.mainColor,
                               borderRadius: BorderRadius.circular(29),
                             ),
-                          ))
+                            child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  AppButtons(
+                                    icon: Icons.cancel,
+                                    iconColor: AppColor.mainColor,
+                                    textColor: Colors.white,
+                                    backgroundColor: Colors.white,
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                  AppButtons(
+                                    icon: Icons.add,
+                                    iconColor: AppColor.mainColor,
+                                    textColor: Colors.white,
+                                    backgroundColor: Colors.white,
+                                    text: 'Add Bill',
+                                  ),
+                                  AppButtons(
+                                      icon: Icons.history,
+                                      iconColor: AppColor.mainColor,
+                                      textColor: Colors.white,
+                                      backgroundColor: Colors.white,
+                                      text: 'History'),
+                                ]),
+                          )),
                     ],
                   ),
                 );
@@ -278,6 +312,33 @@ class _MyHomePageState extends State<MyHomePage> {
         text: "Pay all bills",
         textColor: Colors.white,
       ),
+    );
+  }
+
+  _textContainer() {
+    return Stack(
+      children: [
+        Positioned(
+            left: 0,
+            top: 100,
+            child: Text(
+              'My Bills',
+              style: TextStyle(
+                  fontSize: 70,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF293952)),
+            )),
+        Positioned(
+            left: 40,
+            top: 80,
+            child: Text(
+              'My Bills',
+              style: TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            )),
+      ],
     );
   }
 }
